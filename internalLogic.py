@@ -58,7 +58,7 @@ def parseEmail(emailBody):
     formDict['county'] = inputRaw
 
     inputRaw = emailBody[getEmailLine(emailBody, "Which city do you live in?")+1].strip().lower()
-    if not inputRaw.isalpha(): return "Error in city name: "+inputRaw
+    # if not inputRaw.isalpha(): return "Error in city name: "+inputRaw
     formDict['city'] = inputRaw
 
     inputRaw = emailBody[getEmailLine(emailBody, "Do you have dental insurance or a Medicare Advantage plan?")+1].strip().lower()
@@ -168,7 +168,7 @@ def getSection2Links(stateCode, county, city):
             print("Received a stateCode match. Checking cities now")
             for j in range(1, totalRows+1):
                 print(str(sheet_obj.cell(row = j, column = i).value))
-                if str(sheet_obj.cell(row = j, column = i).value).lower().replace(".", "").replace(" ", "") == city:
+                if str(sheet_obj.cell(row = j, column = i).value).lower().replace(".", "").replace(" ", "") == city.lower():
                     print("I got city match")
                     thisDict['cityMatch'] = True
                     break
