@@ -241,7 +241,7 @@ Howdy! We're glad you found us and we'll do our best to help!<br><br>
 
         if not linksDict['cityMatch'] and not linksDict['countyMatch']:
             section2Text = """
-Based on the information you provided, we don't have a list of the best dentists near you at this time. However, we've included a list of things you should know before choosing a dentist below. \n
+Based on the information you provided, we don't have a list of the best dentists near you at this time. However, we've included a list of things you should know before choosing a dentist below.<br>
 <a href="https://www.denscore.com/how-do-i-find-the-best-dentist-near-me/">https://www.denscore.com/how-do-i-find-the-best-dentist-near-me/</a><br>
 """
     else:
