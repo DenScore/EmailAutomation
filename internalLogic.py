@@ -168,7 +168,7 @@ def getSection2Links(stateCode, county, city):
             print("Received a stateCode match. Checking cities now")
             for j in range(1, totalRows+1):
                 print(str(sheet_obj.cell(row = j, column = i).value))
-                if str(sheet_obj.cell(row = j, column = i).value).lower().replace(".", "").replace(" ", "") == city.lower():
+                if str(sheet_obj.cell(row = j, column = i).value).lower().replace(".", "").replace(" ", "") == city.lower().replace(".", "").replace(" ", ""):
                     print("I got city match")
                     thisDict['cityMatch'] = True
                     break
@@ -292,6 +292,13 @@ Based on the information you provided, we don't have a list of the best dentists
             toAppend = """
 <a href="https://www.denscore.com/navigating-dental-decisions-root-canal-vs-tooth-extraction/">https://www.denscore.com/navigating-dental-decisions-root-canal-vs-tooth-extraction/</a><br>
 <a href="https://www.denscore.com/decoding-bone-grafts-navigating-the-essentials/">https://www.denscore.com/decoding-bone-grafts-navigating-the-essentials/</a><br>
+"""
+            section4Text+=(toAppend)
+
+        if "root canal" in formDict['proceduresNeeded']:
+            toAppend = """
+<a href="https://www.denscore.com/decoding-the-need-for-a-crown-after-root-canal/">https://www.denscore.com/decoding-the-need-for-a-crown-after-root-canal/</a><br>
+<a href="https://www.denscore.com/navigating-dental-choices-access-filling-vs-crown/">https://www.denscore.com/navigating-dental-choices-access-filling-vs-crown/</a><br>
 """
             section4Text+=(toAppend)
 
